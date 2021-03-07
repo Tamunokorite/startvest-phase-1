@@ -11,7 +11,7 @@ class nav extends React.Component{
   render(){
     return(
       <div className="App">
-        
+        Welcome to Startvest  
       </div>
     );
   }
