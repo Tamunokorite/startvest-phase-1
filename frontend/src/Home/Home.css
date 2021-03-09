@@ -1,10 +1,17 @@
 :root{
-  --primary: #21295C;
-  --secondary: #1B3B6F;
-  --alternate: #065A82;
-  --faded: #9EB3C2;
+     --primary: #21295C;
+     --secondary: #1B3B6F;
+     --alternate: #065A82;
+     --faded: #9EB3C2;
+   }
+
+.Home{
+     text-align: center;
 }
-.App{
-  background-color: white;
-  color: black;
+#team_bg{
+     height: 30%;
+     width: 30%;
 }
+/* #mainImage{
+     margin: 1em 1em;
+} */
