@@ -1,0 +1,31 @@
+:root{
+     --primary: #21295C;
+     --secondary: #1B3B6F;
+     --alternate: #065A82;
+     --faded: #9EB3C2;
+}
+
+.heading{
+     font-size: xx-large;
+     font-weight: bold;
+     color: var(--primary)
+}
+.teamHead{
+     font-weight: bold;
+     color: var(--primary);
+}
+#avatar{
+     border-radius: 50%;
+     background-color: var(--primary);
+     text-align: center;
+     width: max-content;
+     height: max-content;
+     padding: 1em;
+     display: inline-block;
+}
+#avatar Person{
+     margin: 0.3em;
+}
+Col{
+     text-align: center;
+}

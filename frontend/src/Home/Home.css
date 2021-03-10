@@ -7,11 +7,23 @@
 
 .Home{
      text-align: center;
+     margin-top: 1em;
+
 }
-#team_bg{
-     height: 30%;
-     width: 30%;
+.homeText{
+     margin: 2em auto;
+     
 }
-/* #mainImage{
-     margin: 1em 1em;
-} */
+.homePic{
+     height: 100%;
+     width: 100%;
+}
+.homePage{
+     height: 100%;
+     color: var(--primary);
+}
+.homeHead{
+     font-size: xx-large;
+     font-weight: bold;
+     color: var(--primary)
+}

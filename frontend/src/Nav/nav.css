@@ -1,4 +1,24 @@
 /* Css for navbar */
-.Navlinks[active]{
+:root{
+     --primary: #21295C;
+     --secondary: #1B3B6F;
+     --alternate: #065A82;
+     --faded: #9EB3C2;
+   }
+.Navlinks-active{
      border-bottom: 2px solid black;
+}
+.navitems{
+     background-color: white;
+}
+
+.Navlinks{
+     font-weight: bold;
+     font-size: large;
+     margin: auto 1em;
+     color: var(--primary);
+}
+
+.Navlinks:hover{
+     border-bottom: 3px solid var(--primary);
 }

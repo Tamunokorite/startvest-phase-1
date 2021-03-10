@@ -14,6 +14,19 @@ import Investors from '../Investors/investors';
 import Profile from '../Profile/profile';
 
 class nav extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state =({
+          key: "home"
+      })
+    }
+
+      handleSelect(key){
+        this.setState({
+            key: key
+        })
+        alert(`selected ${key}`);
+    }
      render() {
           return(
                <div className='navigation'>
@@ -22,23 +35,23 @@ class nav extends React.Component {
                <Navbar.Brand href="/">Startvest logo</Navbar.Brand>
                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                <Navbar.Collapse id="responsive-navbar-nav">
-                 <Nav className="mr-auto navitems ">
-                   <Nav.Link active className='Navlinks' href="/" >Home</Nav.Link>
-                   <Nav.Link active className='Navlinks' href="/about">About Us</Nav.Link>
-                   <Nav.Link active className='Navlinks' href="/startups">Startups</Nav.Link>
-                   <Nav.Link active className='Navlinks' href="/investors">Investors</Nav.Link>
-                   <Nav.Link active className='Navlinks' href="/profile"><PersonCircle /></Nav.Link>
+                 <Nav className="mr-auto">
+                 {/* <Nav.Link active className='Navlinks' href="/" >Home</Nav.Link> */}
                  </Nav>
-                 {/* <Nav >     
-                   <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-primary">Search</Button>
-                    </Form>
-                 </Nav> */}
+                 <Nav className=" navitems" defaultActiveKey="/" onSelect={this.handleSelect}>    
+                 {/* <NavLink exact activeClassName="Navlinks-active"><Nav.Link active className='Navlinks' href="/" >Home</Nav.Link></NavLink>  */}
+                 <Nav.Item><Nav.Link active eventKey="home" className='Navlinks' href="/" >Home</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/about">About Us</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/startups">Startups</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/investors">Investors</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/profile"><PersonCircle color='#21295C' height={30} width={30}/></Nav.Link></Nav.Item>
+                 </Nav>
+                 
                </Navbar.Collapse>
              </Navbar>
              <Switch>
                   <Route exact path="/">
+                    
                     <Home/>
                   </Route>
                   <Route exact path="/about">

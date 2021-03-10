@@ -13,21 +13,20 @@
      bottom: 0;
      width: 100%;
      font: small;
-     height: 5vh;
+     height: fit-content;
      overflow-x: hidden;
- 
  }
  .left{
      display: inline;
       text-align: left;
       left: 0;
-      margin: auto 1em;
-      background: transparent;
  }
  .right{
-      display: inline;
+      display: inline-block;
       text-align: right;
       right: 0;
       margin-right: 0;
-      background: transparent;
+ }
+ Col span{
+      margin: auto 1em;
  }
