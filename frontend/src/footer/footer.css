@@ -1,0 +1,33 @@
+:root{
+     --primary: #21295C;
+     --secondary: #1B3B6F;
+     --alternate: #065A82;
+     --faded: #9EB3C2;
+   }
+.footer{
+     margin: 0;
+     background-color: var(--primary);
+     /* border-radius: 10px 10px 0 0; */
+     color: var(--faded);
+     position: relative;
+     bottom: 0;
+     width: 100%;
+     font: small;
+     height: 5vh;
+     overflow-x: hidden;
+ 
+ }
+ .left{
+     display: inline;
+      text-align: left;
+      left: 0;
+      margin: auto 1em;
+      background: transparent;
+ }
+ .right{
+      display: inline;
+      text-align: right;
+      right: 0;
+      margin-right: 0;
+      background: transparent;
+ }
