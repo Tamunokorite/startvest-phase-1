@@ -6,12 +6,12 @@
 .profile{
      font-size: xx-large;
      font-weight: bold;
-     color: var(--primary)
+     color: var(--primary);
+     text-align: center;
 }
 .form{
-     display: flex;
-     align-self: center;
      margin: 1em auto;
+     width: fit-content;
 }
 .form_box{
      height: max-content;
@@ -21,8 +21,48 @@
 }
 .svgIcon{
      background-color: var(--primary);
-     border-radius: 20px 0 0 20px ;
+     border-radius: 20px ;
 }
 .form_items{
      background-color: transparent;
+     font-size: medium;
+     margin: .5em auto;
+}
+.form_items h2{
+     font-weight: bold;
+}
+Form{
+     text-align: left;
+     margin: auto .5em;
+     color: black;
+}
+.forgot{
+     color: var(--primary);
+     cursor: pointer;
+}
+.forgot:hover{
+     border-bottom: 2px solid var(--primary);
+}
+.submit{
+     text-align: center;
+}
+.submit Button{
+     background-color: var(--primary);
+     color: white;
+     width: 100%;
+     border: none !important;
+     font-weight: bold;
+}
+.submit Button:hover{
+    background-color: var(--secondary);
+}
+.icons{
+     color: var(--primary);
+     height: 50%;
+     width: 50%;
+
+}
+.icons:hover{
+     height: 65%;
+     width: 65%;
 }
