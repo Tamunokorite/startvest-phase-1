@@ -1,9 +1,8 @@
-:root{
-     --primary: #21295C;
-     --secondary: #1B3B6F;
-     --alternate: #065A82;
-     --faded: #9EB3C2;
-}
+/* Css for hoome page */
+
+/* To import the colors of the brand */
+@import "../utility/colors.css";
+
 
 .heading{
      font-size: xx-large;

@@ -29,9 +29,9 @@ class nav extends React.Component {
     }
      render() {
           return(
-               <div className='navigation'>
+               <div>
                <Router>
-               <Navbar collapseOnSelect expand="lg" bg="light" sticky='top'>
+               <Navbar className="navigation" collapseOnSelect expand="lg" bg="light" sticky='top' >
                <Navbar.Brand href="/">Startvest logo</Navbar.Brand>
                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                <Navbar.Collapse id="responsive-navbar-nav">

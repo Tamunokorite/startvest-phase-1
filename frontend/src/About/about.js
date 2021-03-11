@@ -44,7 +44,7 @@ class about extends React.Component {
                     </Row>
                     <Row>
                     {Object.values(team).map((val, ind)=>
-                     <Col><p><span id='avatar'><Person color='white' margin={3} height={30} width={30}/></span></p><b>{val.name}</b><p>{val.position}</p></Col>      // <th key={ind}>{(val) ? val:' '}</th>
+                     <Col key={ind}><p><span id='avatar'><Person color='white' margin={3} height={30} width={30}/></span></p><b>{val.name}</b><p>{val.position}</p></Col>      // <th key={ind}>{(val) ? val:' '}</th>
                     )} 
                         
                     </Row>
