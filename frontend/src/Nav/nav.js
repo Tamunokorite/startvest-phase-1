@@ -31,7 +31,7 @@ class nav extends React.Component {
           return(
                <div>
                <Router>
-               <Navbar className="navigation" collapseOnSelect expand="lg" bg="light" sticky='top' >
+               <Navbar className="navigation shadow-sm" collapseOnSelect expand="lg" bg="light" sticky='top' >
                <Navbar.Brand href="/">Startvest logo</Navbar.Brand>
                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                <Navbar.Collapse id="responsive-navbar-nav">

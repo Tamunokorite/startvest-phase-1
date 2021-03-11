@@ -18,6 +18,7 @@
      width: fit-content;
      background-color: var(--faded);
      border-radius: 20px;
+     max-width: max-content;
 }
 .svgIcon{
      background-color: var(--primary);
@@ -65,4 +66,7 @@ Form{
 .icons:hover{
      height: 65%;
      width: 65%;
+}
+.user_type{
+     margin: 1em auto;
 }

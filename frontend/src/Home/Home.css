@@ -3,26 +3,58 @@
 /* To import the colors of the brand */
 @import "../utility/colors.css";
 
-.homeHead{
+.Home{
+     text-align: center;
+     margin-top: 2em;
+}
+.Home-head{
+     font-size: xx-large;
+     font-weight: bold;
+     color: var(--primary);
+     text-align: center;
+}
+.tagline{
      font-size: xx-large;
      font-weight: bold;
      color: var(--primary)
 }
 
-.Home{
-     text-align: center;
-     margin-top: 1em;
-
+.homePage{
+     height: fit-content;
+     color: var(--primary);
 }
 .homeText{
-     margin: 2em auto;
-     
+    margin-top: 15%;
+     font-weight: bold;
 }
-.homePic{
-     height: 100%;
-     width: 100%;
+.text{
+     margin-top: 9%;
 }
-.homePage{
-     height: 100%;
+.btn-outline Button{
+     background-color: transparent;
+     border: 2px solid var(--primary);
      color: var(--primary);
+     border-radius: 10px;
+}
+.home-btns{
+     margin-top: 15%;
+}
+.btn-outline Button:hover{
+     background-color: var(--primary);
+     color: white;
+     border: 2px solid var(--primary);
+}
+.btn-fill Button{ 
+     border-radius: 10px;
+     background-color: var(--primary);
+     color: white;
+     border: 2px solid var(--primary);
+}
+.btn-fill Button:hover{ 
+     background-color: var(--secondary);
+     border: 2px solid var(--secondary);
+}
+.btn-fill Button:active + .btn-outline Button:active{
+     background-color: var(--secondary);
+
 }

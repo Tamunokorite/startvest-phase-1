@@ -4,7 +4,8 @@
 @import "../utility/colors.css";
 
 .navigation{
-     background-color: transparent;
+     background-color: white !important;
+     margin-bottom: 2em;
 }
 .Navlinks-active{
      border-bottom: 2px solid black;
@@ -23,3 +24,4 @@
 .Navlinks:hover{
      border-bottom: 3px solid var(--primary);
 }
+
