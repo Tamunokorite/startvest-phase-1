@@ -3,7 +3,7 @@ import './profile.css';
 import {Container, Row, Col, Form, Spinner, Button} from 'react-bootstrap';
 
 import {Github, Google, Facebook} from 'react-bootstrap-icons';
-import {FaMicrosoft} from 'react-icons/fa';
+
 
 // SVG Images used
 // import TeamPic from '../images/team_3.svg';
@@ -152,24 +152,23 @@ class profile extends React.Component {
           return (
                <div>
                     <Form.Group as={Row} controlId="formHorizontalAltLogin">
-                              <Col >{(signup) ? 'Sign up with: ':'Login with: '}</Col>
+                              <Col sm={4}>{(signup) ? 'Sign up with: ':'Login with: '}</Col>
                               <Col><Github className='icons'/></Col>
                               <Col><Google className='icons'/></Col>
                               <Col><Facebook className='icons'/></Col>
-                              <Col><FaMicrosoft className='icons'/></Col>
                     </Form.Group>
                
 
                {(signup) ? 
                <Form.Group as={Row}>
                <Col>
-                    Already have an account <span className='forgot' onClick={() => {this.setState({signup: false});}}>Login!</span>
+                    Already have an account? <span className='forgot' onClick={() => {this.setState({signup: false});}}>Login</span>
                </Col>
                </Form.Group>
                :
                <Form.Group as={Row}>
-               <Col>
-                    Don't have an account <span className='forgot' onClick={() => {this.setState({signup: true});}}>Sign up!</span>
+               <Col >
+                    Don't have an account? <span className='forgot' onClick={() => {this.setState({signup: true});}}>Sign up</span>
                </Col>
                </Form.Group>
                }

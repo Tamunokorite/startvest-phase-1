@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './startups.css';
-import { Spinner} from 'react-bootstrap';
+import { Spinner, Col, Container, Row} from 'react-bootstrap';
 
 // Import Job view
 import Job from './jobs';
@@ -13,7 +13,7 @@ var startups = {
           'name':'Voltex Designs', 
           'location': 'Abuja, Nigeria',
           'est': '2019',
-          'desciption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
           'industry': 'Graphics Design',
           'job': {
                'num': 1,
@@ -24,7 +24,7 @@ var startups = {
           'name':'Alpha Tech', 
           'location': 'Lagos, Nigeria',
           'est': '2017',
-          'desciption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
           'industry': 'Cable Networks',
           'job': {
                'num': 2,
@@ -35,7 +35,7 @@ var startups = {
           'name':'Spartech Energy ', 
           'location': 'Ogun, Nigeria',
           'est': '2018',
-          'desciption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
           'industry': 'Energy solution',
           'job': {
                'num': null,
@@ -46,7 +46,7 @@ var startups = {
           'name':'Slick Cloud', 
           'location': 'Kaduna, Nigeria',
           'est': '2020',
-          'desciption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor neque, risus euismod cursus tellus, tellus viverra vel fusce. Etiam fermentum mattis enim sed.',
           'industry': 'Saas, Iaas',
           'job': {
                'num': 3,
@@ -60,7 +60,7 @@ class Startup extends React.Component {
      constructor(props) {
           super(props);
           this.state =({
-            view: 'job'
+            view: 'startups'
           })
         }
 
@@ -68,8 +68,21 @@ class Startup extends React.Component {
      startups = () => {
           return(
                <div>
-                    <h1>Startups</h1>
-                    Startups view in columns
+                    <h1 className='startups-head'>Startups</h1>
+                    <Container fluid>
+                    {Object.values(startups).map((val, index)=>
+                              <Col className='col-startup shadow' key={index}  md={6}>
+                                   <h3>{val.name}</h3>
+                                   <p className='col-startup-sm'>{val.location}</p>
+                                   <p className='col-startup-sm'>Est. {val.est}</p>
+                                   <p>{val.description}</p>
+                                   <Row>
+                                        <Col className='col-startup-sm' sm={7}>{val.industry}</Col>
+                                        {(val.job.num) ? <Col className='col-startup-job' sm={5}>{val.job.num} jobs</Col> :''}
+                                   </Row>
+                              </Col>
+                    )}
+                    </Container>
                </div>
           )
      }
