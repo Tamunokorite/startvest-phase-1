@@ -1,0 +1,12 @@
+/* Css for Startups page */
+
+/* To import the colors of the brand */
+@import "../utility/colors.css";
+
+.load{
+     margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     color: var(--secondary);
+}

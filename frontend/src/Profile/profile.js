@@ -182,7 +182,7 @@ class profile extends React.Component {
      renderview(){   
           console.log(this.state.authenticated);        
           switch(this.state.authenticated){
-              default: return <div><Spinner  animation='grow' color='#21295C'/></div>
+              default: return <div><Spinner className="load" animation='border' color='#21295C'/></div>
                   case false: return (this.state.signup) ? this.Signin(): this.login();
                   case true: return this.userProfile();
           }

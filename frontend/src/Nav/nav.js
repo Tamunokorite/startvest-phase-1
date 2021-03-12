@@ -42,16 +42,16 @@ class nav extends React.Component {
                  {/* <NavLink exact activeClassName="Navlinks-active"><Nav.Link active className='Navlinks' href="/" >Home</Nav.Link></NavLink>  */}
                  <Nav.Item><Nav.Link active eventKey="home" className='Navlinks' href="/" >Home</Nav.Link></Nav.Item>
                  <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/about">About Us</Nav.Link></Nav.Item>
-                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/startups">Startups</Nav.Link></Nav.Item>
-                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/investors">Investors</Nav.Link></Nav.Item>
-                 <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/profile"><PersonCircle color='#21295C' height={30} width={30}/></Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="startup" className='Navlinks' href="/startups">Startups</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="investors" className='Navlinks' href="/investors">Investors</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="profile" className='Navlinks' href="/profile"><PersonCircle color='#21295C' height={30} width={30}/></Nav.Link></Nav.Item>
                  </Nav>
                  
                </Navbar.Collapse>
              </Navbar>
-             <Switch>
+             <div className='views'>
+             <Switch >
                   <Route exact path="/">
-                    
                     <Home/>
                   </Route>
                   <Route exact path="/about">
@@ -67,6 +67,7 @@ class nav extends React.Component {
                     <Profile/>
                   </Route>
              </Switch>
+             </div>
              </Router>
              </div>
           )
