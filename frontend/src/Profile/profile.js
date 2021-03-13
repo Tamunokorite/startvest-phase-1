@@ -1,7 +1,6 @@
 import React from 'react';
 import './profile.css';
 import {Container, Row, Col, Form, Spinner, Button} from 'react-bootstrap';
-
 import {Github, Google, Facebook} from 'react-bootstrap-icons';
 
 
