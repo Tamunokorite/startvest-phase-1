@@ -7,7 +7,7 @@ import {PersonCircle} from 'react-bootstrap-icons';
 
 
 // Import the views
-import Home from '../Home/home';
+import Home from '../Home/Home';
 import About from '../About/about';
 import Startups from '../Startups/startups';
 import Investors from '../Investors/investors';

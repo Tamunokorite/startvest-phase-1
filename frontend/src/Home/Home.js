@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './home.css';
+import './Home.css';
 import {Container, Row, Col, Button} from 'react-bootstrap';
 
 // Importing the main homepage svg picture

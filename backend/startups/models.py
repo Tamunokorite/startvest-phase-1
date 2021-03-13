@@ -24,3 +24,22 @@ class Startup(models.Model):
 
     def __str__(self):
         return self.company_name
+
+
+class JobOpening(models.Model):
+    company = models.OneToOneField(Startup, on_delete=models.CASCADE)
+    job_title = models.TextField()
+    description = models.TextField()
+    location = models.CharField(max_length=200)
+    application_link = models.CharField(max_length=600)
+    salary = models.FloatField(null=True, blank=True)
+    requirements = ArrayField(models.TextField())
+    job_type = (
+        ('FT', 'Full Time'),
+        ('PT', 'Part Time'),
+    )
+    mode = (
+        ('Remote', 'Remote'),
+        ('In Person', 'In Person'),
+    )
+    extra_info = ArrayField(models.TextField())
