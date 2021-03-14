@@ -3,6 +3,9 @@ import './profile.css';
 import {Container, Row, Col, Form, Spinner, Button} from 'react-bootstrap';
 import {Github, Google, Facebook} from 'react-bootstrap-icons';
 
+// The startup and investors form
+import StartForm from './startupForm';
+
 
 // SVG Images used
 // import TeamPic from '../images/team_3.svg';
@@ -15,10 +18,11 @@ class profile extends React.Component {
           this.state =({
              user: [],
              authenticated: false,
+             registered: false,//If the user is a new user
           //User is the current signed in user profile sent from the database
 
           // Login or signup
-             signup: true
+             signup: false,
           })
         }
 
@@ -27,6 +31,7 @@ class profile extends React.Component {
           return(
                <div>
                     <h3>Welcome User</h3>
+                                  
                </div>
           )
      }
@@ -67,7 +72,7 @@ class profile extends React.Component {
                                    
                                    <Form.Group as={Row}>
                                     <Col className='submit'>
-                                        <Button type="submit">Login</Button>
+                                        <Button type="submit" onClick={() => this.setState({authenticated: true})}>Login</Button>
                                     </Col>
                                    </Form.Group>
 
@@ -182,7 +187,7 @@ class profile extends React.Component {
           switch(this.state.authenticated){
               default: return <div><Spinner className="load" animation='border' color='#21295C'/></div>
                   case false: return (this.state.signup) ? this.Signin(): this.login();
-                  case true: return this.userProfile();
+                  case true: return (this.state.registered)? this.userProfile(): <StartForm/>;
           }
       }
       
@@ -190,7 +195,7 @@ class profile extends React.Component {
      render(){
           return(
           <div className="profile">
-               Profile
+               {/* <h3 className="profile-head">Profile</h3> */}
                {this.renderview()}
           </div>
           )

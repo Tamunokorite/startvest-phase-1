@@ -208,7 +208,7 @@ class Startup extends React.Component {
                <div className='startups'>
                     <Container fluid>
                          <Row>
-                              <Col sm={1}><ArrowLeft className='icon-back' width={40} height={40} onClick={() =>{this.setState({view: 'startups'})}}/></Col>
+                              <Col sm='auto'><ArrowLeft className='icon-back' width={40} height={40} onClick={() =>{this.setState({view: 'startups'})}}/></Col>
                               <Col sm='auto'><span className='logo'>Startup Logo</span></Col>
                               <Col sm='auto'><h3 className='startups-head'>{startup.name}</h3><p className='col-startup-sm'>{startup.location}</p></Col>
                          </Row>
