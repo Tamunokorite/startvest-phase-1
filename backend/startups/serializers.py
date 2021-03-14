@@ -1,3 +1,10 @@
 from rest_framework import serializers
 from .models import Startup, JobOpening
-from django.contrib.auth.models import User
+from users.models import User, user_type
+
+
+class JobOpeningSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = JobOpening
+        fields = '__all__'
+
