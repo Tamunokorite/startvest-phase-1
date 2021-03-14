@@ -22,7 +22,7 @@ class profile extends React.Component {
           //User is the current signed in user profile sent from the database
 
           // Login or signup
-             signup: false,
+             signup: true,
           })
         }
 
@@ -72,7 +72,7 @@ class profile extends React.Component {
                                    
                                    <Form.Group as={Row}>
                                     <Col className='submit'>
-                                        <Button type="submit" onClick={() => this.setState({authenticated: true})}>Login</Button>
+                                        <Button type="submit" >Login</Button>
                                     </Col>
                                    </Form.Group>
 
@@ -138,7 +138,7 @@ class profile extends React.Component {
                                    
                                    <Form.Group as={Row}>
                                         <Col className='submit'>
-                                             <Button type="submit">Sign Up</Button>
+                                             <Button type="submit" onClick={() => this.setState({authenticated: true})}>Sign Up</Button>
                                         </Col>
                                    </Form.Group>
                                    
