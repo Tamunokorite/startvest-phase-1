@@ -1,6 +1,7 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from users.models import User, user_type
+from startups.models import Startup
 
 # Create your models here.
 class Investor(models.Model):
@@ -11,3 +12,9 @@ class Investor(models.Model):
 
     def __str__(self):
         return User.get_email(self.user)
+
+
+class Investment(models.Model):
+    investor = models.OneToOneField(Investor, on_delete=models.CASCADE)
+    startup = models.OneToOneField(Startup, on_delete=models.CASCADE)
+    amount = models.FloatField()
