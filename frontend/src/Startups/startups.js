@@ -187,7 +187,7 @@ class Startup extends React.Component {
                                    <p>{val.description}</p>
                                    <Row>
                                         <Col className='col-startup-sm' >{val.industry}</Col>
-                                        {(val.job) ? <Col className='col-startup-job' onClick={() => {this.setState({view: 'job', id: index})}}>{Object.keys(val.job).length} jobs</Col> :''}
+                                        {(val.job) ? <Col className='col-startup-job' onClick={() => {this.setState({view: 'job', id: index})}}>{Object.keys(val.job).length} job</Col> :''}
                                    </Row>
                               </Col>
                     )}

@@ -96,14 +96,12 @@ class profile extends React.Component {
                               <Col className='form_items'>
                                    <h2>Sign Up</h2>
                               <Form >
-                                   <fieldset>
-                                   <Form.Row className='user_type'>
-                                        <Col><Form.Check type='radio'  label="Startup" /></Col>
-                                        <Col><Form.Check type='radio'  label="Investor" /></Col>
-                                        <Col><Form.Check type='radio' label="Neither" /></Col>
-                                   </Form.Row>
-                                   </fieldset>
 
+                                   <Form.Group as={Row} className='user_type'>
+                                   <Col sm='auto'> <Form.Check type="radio" label="Startup" name="formHorizontalRadios"  /></Col>
+                                   <Col sm='auto'> <Form.Check type="radio" label="Investor" name="formHorizontalRadios" /></Col>
+                                   </Form.Group>
+                                   
 
                                    <Form.Row>
                                         <Form.Group as={Col} controlId="formHorizontalPassword">
