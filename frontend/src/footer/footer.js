@@ -8,10 +8,10 @@ class footer extends React.Component {
      render(){
           return(
           <div className='footer'>
-               <Container>
-               <Row>
-                    <Col className='left'>Copyright &copy; 2021 Nile Google Developers Club, Abuja</Col>
-                    <Col className='right'>Contact us  <span><Twitter color='#9EB3C2' /></span>  <span>{<Github color='#9EB3C2 '/>}</span></Col>
+               <Container fluid>
+               <Row className='footer-text'>
+                    <Col className='left' >Copyright &copy;  2021 Nile Google Developers Club, Abuja</Col>
+                    <Col className='right' >Contact us  <span><Twitter color='#9EB3C2' /></span>  <span>{<Github color='#9EB3C2 '/>}</span></Col>
                </Row>
                </Container>
               

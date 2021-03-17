@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './startups.css';
 import { Spinner, Col, Container, Row, Carousel, Button} from 'react-bootstrap';
 import {ArrowLeft, ArrowRightShort, Person, CircleFill} from 'react-bootstrap-icons';
+import ReactPlayer from "react-player";
 
 // Import Job view
-import Job from './jobs';
+import Job from './job';
 
 // Import pictures
 import Teampic1 from '../images/gallery1.png';
@@ -14,7 +15,7 @@ import Teampic2 from '../images/gallery2.png';
 //Startup json from the backend
 var startups = {
      'voltex': {
-          'image':false, 
+          'logo':false, 
           'name':'Voltex Designs', 
           'location': 'Abuja, Nigeria',
           'est': '2019',
@@ -35,7 +36,7 @@ var startups = {
           'model': 'B2C',
           'funding': 'Seed',
           'registered': false,
-          'executives':{
+          'team':{
                '1':{
                     'name': 'Lorem Ipsum',
                     'position': 'CEO/Founder'
@@ -52,7 +53,7 @@ var startups = {
           }
      },
      'alpha': {
-          'image':false, 
+          'logo':false, 
           'name':'Alpha Tech', 
           'location': 'Lagos, Nigeria',
           'est': '2017',
@@ -73,7 +74,7 @@ var startups = {
           'model': 'B2B',
           'funding': '2nd Round',
           'registered': true,
-          'executives':{
+          'team':{
                '1':{
                     'name': 'Lorem Ipsum',
                     'position': 'CEO/Founder'
@@ -90,7 +91,7 @@ var startups = {
           }
      },
      'spartech': {
-          'image':false, 
+          'logo':false, 
           'name':'Spartech Energy ', 
           'location': 'Ogun, Nigeria',
           'est': '2018',
@@ -104,7 +105,7 @@ var startups = {
           'model': 'B2C',
           'funding': 'Seed',
           'registered': false,
-          'executives':{
+          'team':{
                '1':{
                     'name': 'Lorem Ipsum',
                     'position': 'CEO/Founder'
@@ -121,7 +122,7 @@ var startups = {
           }
      },
      'slick': {
-          'image':false, 
+          'logo':false, 
           'name':'Slick Cloud', 
           'location': 'Kaduna, Nigeria',
           'est': '2020',
@@ -142,10 +143,10 @@ var startups = {
           'model': 'B2C',
           'funding': 'Seed',
           'registered': false,
-          'executives':{
+          'team':{
                '1':{
                     'name': 'Lorem Ipsum',
-                    'position': 'CEO/Founder'
+                    'position': 'CEO/Founder',
                },
                '2':{
                     'name': 'Lorem Ipsum',
@@ -247,6 +248,8 @@ class Startup extends React.Component {
                         {/* Gallery Section */}
                         <Container fluid>
                          <h3 className="gallery-head">Gallery</h3>
+                         <Row>
+                         <Col>
                          <Carousel className='gallery shadow'>
                               <Carousel.Item>
                               <img
@@ -273,13 +276,19 @@ class Startup extends React.Component {
                               </Carousel.Caption>
                               </Carousel.Item>
                          </Carousel>
+                         </Col>
+                         <Col>
+                         {/* <div>Video Column</div> */}
+                         <ReactPlayer className='gallery-video' url='https://www.youtube.com/embed/suuTbKJV7Ik?autoplay=1'/>
+                         </Col>
+                         </Row>
                          </Container>
 
                          {/* Team Executives Section */}
                          <Container>
                          <h3 className="gallery-head">Key Executives</h3>
                          <Row>
-                         {Object.values(startup.executives).map((val, ind)=>
+                         {Object.values(startup.team).map((val, ind)=>
                           <Col key={ind}><p><span id='avatar'><Person color='white' margin={3} height={30} width={30}/></span></p><b>{val.name}</b><p>{val.position}</p></Col>      // <th key={ind}>{(val) ? val:' '}</th>
                          )} 
                          </Row>
@@ -290,7 +299,7 @@ class Startup extends React.Component {
                               <h3 className="gallery-head">Working at {startup.name}</h3>
                               <ul className='working-list'> 
                                    {[1, 2, 3, 4, 5, 6].map((val, ind) => 
-                                    <li><CircleFill className='icon-back' height={10} width={10}/>  Adipiscing elit. Nulla semper mi adipiscing, volutpat. </li>
+                                    <li key={ind}><CircleFill className='icon-back' height={10} width={10}/>  Adipiscing elit. Nulla semper mi adipiscing, volutpat. </li>
                                    )}
                               </ul>
                          </Container>

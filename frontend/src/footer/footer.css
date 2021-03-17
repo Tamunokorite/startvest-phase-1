@@ -14,18 +14,17 @@
      height: fit-content;
      overflow-x: hidden;
      max-height: min-content;
+     padding: .2em auto;
  }
- .left{
-     display: inline;
-      text-align: left;
-      left: 0;
- }
+
  .right{
-      display: inline-block;
       text-align: right;
-      right: 0;
-      margin-right: 0;
  }
- Col span{
-      margin: auto 1em;
+ .right span{ 
+      margin: auto .5em !important;
  }
+.footer-text{
+     margin: 0;
+     padding: 0;
+     width: 100%;
+}

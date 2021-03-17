@@ -18,11 +18,21 @@
      font-weight: bold;
      font-size: large;
      margin: auto 1em;
-     color: black !important;
+     color: var(--primary) !important;
+   
 }
 
 .Navlinks:hover{
      border-bottom: 3px solid var(--primary);
+}
+.line-break{
+     height: 100%;
+     width: 1px;
+     margin: 0;
+     padding: 0;
+     background-color: black;
+     opacity: .5;
+     
 }
 .views{
      min-height: 81vh;

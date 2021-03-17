@@ -12,6 +12,7 @@ import About from '../About/about';
 import Startups from '../Startups/startups';
 import Investors from '../Investors/investors';
 import Profile from '../Profile/profile';
+import Jobs from '../jobs/jobs';
 
 class nav extends React.Component {
   constructor(props) {
@@ -40,10 +41,13 @@ class nav extends React.Component {
                  </Nav>
                  <Nav className=" navitems" defaultActiveKey="/" onSelect={this.handleSelect}>    
                  {/* <NavLink exact activeClassName="Navlinks-active"><Nav.Link active className='Navlinks' href="/" >Home</Nav.Link></NavLink>  */}
-                 <Nav.Item><Nav.Link active eventKey="home" className='Navlinks' href="/" >Home</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="home" className='Navlinks ' href="/" >Home</Nav.Link></Nav.Item>
                  <Nav.Item><Nav.Link active eventKey="about" className='Navlinks' href="/about">About Us</Nav.Link></Nav.Item>
-                 <Nav.Item><Nav.Link active eventKey="startup" className='Navlinks' href="/startups">Startups</Nav.Link></Nav.Item>
-                 <Nav.Item><Nav.Link active eventKey="investors" className='Navlinks' href="/investors">Investors</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="jobs" className='Navlinks' href="/jobs">Jobs</Nav.Link></Nav.Item>
+                 <Nav.Item><div className='line-break'></div></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="startup" className='Navlinks' href="/startups" id='line-left-border'>Startups</Nav.Link></Nav.Item>
+                 <Nav.Item><Nav.Link active eventKey="investors" className='Navlinks' href="/investors" id='line-right-border'>Investors</Nav.Link></Nav.Item>
+                 <Nav.Item><div className='line-break'></div></Nav.Item>
                  <Nav.Item><Nav.Link active eventKey="profile" className='Navlinks' href="/profile"><PersonCircle color='#21295C' height={30} width={30}/></Nav.Link></Nav.Item>
                  </Nav>
                  
@@ -65,6 +69,9 @@ class nav extends React.Component {
                   </Route>
                   <Route exact path="/profile">
                     <Profile/>
+                  </Route>
+                  <Route exact path="/jobs">
+                    <Jobs/>
                   </Route>
              </Switch>
              </div>
