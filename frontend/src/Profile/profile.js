@@ -23,9 +23,15 @@ class profile extends React.Component {
 
           // Login or signup
              signup: true,
+
+             check: false
           })
         }
 
+        handlecheckbox = (e) =>{
+          console.log(e.target.value);
+          this.setState({check: e.target.value});
+        }
      //   Render the User Profile if exist or in session
      userProfile  = () =>{
           return(
@@ -88,6 +94,7 @@ class profile extends React.Component {
 
       //   Render the signin screen
       Signin = () =>{
+           console.log(this.state.check);
           return(
                <div>
                      <Container  className='form '> 
@@ -97,9 +104,9 @@ class profile extends React.Component {
                                    <h2>Sign Up</h2>
                               <Form >
 
-                                   <Form.Group as={Row} className='user_type'>
-                                   <Col sm='auto'> <Form.Check type="radio" label="Startup" name="formHorizontalRadios"  /></Col>
-                                   <Col sm='auto'> <Form.Check type="radio" label="Investor" name="formHorizontalRadios" /></Col>
+                                   <Form.Group as={Row} className='user_type' >
+                                   <Col sm='auto'> <Form.Check onChange={this.handlecheckbox} type="radio" label="Startup" name="formHorizontalRadios" checked={this.state.check} /></Col>
+                                   <Col sm='auto'> <Form.Check onChange={this.handlecheckbox} type="radio" label="Investor" name="formHorizontalRadio1" checked={this.state.check}/></Col>
                                    </Form.Group>
                                    
 
@@ -180,8 +187,7 @@ class profile extends React.Component {
      }
 
      // Render the 
-     renderview(){   
-          console.log(this.state.authenticated);        
+     renderview(){          
           switch(this.state.authenticated){
               default: return <div><Spinner className="load" animation='border' color='#21295C'/></div>
                   case false: return (this.state.signup) ? this.Signin(): this.login();
