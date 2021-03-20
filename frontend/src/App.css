@@ -42,5 +42,6 @@
 ::-webkit-scrollbar-thumb:hover {
   /* background: #555; */
   background: var(--secondary);
+  cursor: pointer;
 }
 

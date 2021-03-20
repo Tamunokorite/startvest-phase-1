@@ -8,7 +8,7 @@
      margin-top: 2em;
 }
 .Home-head{
-     font-size: xx-large;
+     font-size: 300%;
      font-weight: bold;
      color: var(--primary);
      text-align: center;
@@ -16,7 +16,7 @@
 .tagline{
      font-size: xx-large;
      font-weight: bold;
-     color: var(--primary)
+     color: var(--primary);
 }
 
 .homePage{
@@ -58,4 +58,25 @@
 .btn-fill Button:active + .btn-outline Button:active{
      background-color: var(--secondary);
 
+}
+/* Startup view on homepage */
+.home-startup{
+     margin: 10% auto;
+     border-radius: 20px;
+}
+.counter{
+     font-size: xx-large;
+     font-weight: bold;
+}
+.margin-top{
+     margin-top: 10%;
+}
+.underText{
+     font-size: small;
+     color: black;
+     font-weight: bold;
+}
+.center{
+     margin: auto;
+     text-align: center;
 }

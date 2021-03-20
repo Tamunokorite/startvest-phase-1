@@ -5,7 +5,7 @@ import {Github, Google, Facebook} from 'react-bootstrap-icons';
 
 // The startup and investors form
 import StartForm from './startupForm';
-
+import InvestorForm from './investorForm';
 
 // SVG Images used
 // import TeamPic from '../images/team_3.svg';
@@ -18,7 +18,7 @@ class profile extends React.Component {
           this.state =({
              user: [],
              authenticated: false,
-             registered: false,//If the user is a new user
+             registered: true,//If the user is a new user
           //User is the current signed in user profile sent from the database
 
           // Login or signup
@@ -32,12 +32,12 @@ class profile extends React.Component {
           console.log(e.target.value);
           this.setState({check: e.target.value});
         }
+   
      //   Render the User Profile if exist or in session
      userProfile  = () =>{
           return(
                <div>
-                    <h3>Welcome User</h3>
-                                  
+                    <h3>Welcome User</h3>                 
                </div>
           )
      }
@@ -81,9 +81,7 @@ class profile extends React.Component {
                                         <Button type="submit" >Login</Button>
                                     </Col>
                                    </Form.Group>
-
                                    {this.altLogin(false)}
-                                   
                               </Form>
                               </Col>
                          </Row>
@@ -94,7 +92,6 @@ class profile extends React.Component {
 
       //   Render the signin screen
       Signin = () =>{
-           console.log(this.state.check);
           return(
                <div>
                      <Container  className='form '> 
@@ -105,8 +102,16 @@ class profile extends React.Component {
                               <Form >
 
                                    <Form.Group as={Row} className='user_type' >
-                                   <Col sm='auto'> <Form.Check onChange={this.handlecheckbox} type="radio" label="Startup" name="formHorizontalRadios" checked={this.state.check} /></Col>
-                                   <Col sm='auto'> <Form.Check onChange={this.handlecheckbox} type="radio" label="Investor" name="formHorizontalRadio1" checked={this.state.check}/></Col>
+                                   <Col sm='auto'> Investor</Col>
+                                   <Col sm='auto'> 
+                                   <Form.Check 
+                                   type="switch"
+                                   id="custom-switch"
+                                   onChange={this.handlecheckbox}
+                                   checked={this.state.check }
+                                   />
+                                   </Col>
+                                   <Col sm='auto'>Startup</Col>
                                    </Form.Group>
                                    
 
@@ -191,7 +196,7 @@ class profile extends React.Component {
           switch(this.state.authenticated){
               default: return <div><Spinner className="load" animation='border' color='#21295C'/></div>
                   case false: return (this.state.signup) ? this.Signin(): this.login();
-                  case true: return (this.state.registered)? this.userProfile(): <StartForm/>;
+                  case true: return (this.state.registered)? <InvestorForm/>: <StartForm/>; //this.userProfile()
           }
       }
       

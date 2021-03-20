@@ -81,7 +81,10 @@ Form{
 .user_type{
      margin: 1em auto;
 }
-
+.inline{
+     display: inline;
+     margin: 0;
+}
 /* Css for Startup Form */
 .form{
      width: 70%;
@@ -108,3 +111,4 @@ Form{
           width: 90%;
      }
 }
+
