@@ -5,7 +5,20 @@ import './profile.css';
 import {Button, Form, Col, Row} from 'react-bootstrap';
 import {Info} from 'react-bootstrap-icons';
 
-const StartForm = ()=>{
+class StartupForm extends React.Component {
+     constructor(props) {
+          super(props);
+          this.state=({ 
+               name: []
+          })
+     }
+
+
+     handleChange = ({ target }) => {
+          this.setState({ [target.name]: target.type === 'checkbox' ? target.checked : target.value });
+     };
+
+render(){
      return(
           <div className='form shadow'>
                <h3 className="profile-head">Registration form for starturps</h3>
@@ -84,5 +97,6 @@ const StartForm = ()=>{
           </div>
      )
 }
+}
 
-export default StartForm;
+export default StartupForm;

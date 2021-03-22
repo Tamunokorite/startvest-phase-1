@@ -245,10 +245,10 @@ class investors extends React.Component {
                          <p className='counter'>{Object.keys(investor).length}+ Investors looking for startups</p>
                          </div>
                          <Row >   
-                              {Object.values(investor).slice(1, 3).map((val, ind) => 
+                              {Object.values(investor).slice(3, 6).map((val, ind) => 
                               <div key={ind} className='job-container shadow'>
                                    <Row>
-                                   <Col sm='auto' ><CircleFill className='icon-back' height={50} width={50}/></Col>
+                                   {/* <Col sm='auto' ><CircleFill className='icon-back' height={50} width={50}/></Col> */}
                                    <Col sm='auto'>
                                         <div key={ind} className='col-startup-name' >{val.name}</div>
                                         <span className='underText'> {val.industry}</span> <span><CircleFill className='icon-back' height={5} width={5}/></span>
@@ -268,7 +268,7 @@ class investors extends React.Component {
                               <Col>
                               <h5 className='tagline'>See all the top startups</h5>
                               <p className='counter margin-top'>{this.state.count_startup}+ startups Registered</p>
-                              <p className='homePage'>Join us today to make you take a step closer in achieving your goals!</p>
+                              <p className='homeText'>Join us today to make you take a step closer in achieving your goals!</p>
                               </Col>
                               </Slide>
                          
@@ -277,7 +277,7 @@ class investors extends React.Component {
                               {Object.values(startups).slice(1, 3).map((val, ind) => 
                               <div key={ind} className='job-container shadow'>
                                    <Row>
-                                   <Col sm='auto' ><CircleFill className='icon-back' height={50} width={50}/></Col>
+                                   {/* <Col sm='auto' ><CircleFill className='icon-back' height={50} width={50}/></Col> */}
                                    <Col sm='auto'>
                                         <div key={ind} className='col-startup-name' >{val.name}</div>
                                         <span className='underText'>Est. {val.est}</span> <span><CircleFill className='icon-back' height={5} width={5}/></span> <span className='underText' >{val.industry}</span> <span><CircleFill className='icon-back' height={5} width={5}/></span> <span className='underText' >{val.location}</span>
