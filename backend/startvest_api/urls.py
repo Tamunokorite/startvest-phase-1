@@ -23,7 +23,7 @@ urlpatterns = [
     path('api/v1.0/users/', include('users.urls')),
 
     # Site endpoints
-    path('api/v1.0/start/', include('startups.urls')),
+    path('api/v1.0/startups/', include('startups.urls')),
     # path('api/v1.0/invest/', include('investors.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -15,8 +15,9 @@ class JobOpeningSerializer(serializers.ModelSerializer):
 
 
 class StartupSerializer(serializers.ModelSerializer):
-    jobs = JobOpeningSerializer(many=True, required=False)
-    gallery = StartupGallerySerializer(many=True, required=False)
     class Meta:
         model = Startup
         fields = '__all__'
+
+    jobs = JobOpeningSerializer(many=True, read_only=True)
+    gallery = StartupGallerySerializer(many=True, read_only=True)

@@ -17,10 +17,10 @@ class Startup(models.Model):
     )
     website = models.CharField(max_length=200)
     registered = models.BooleanField()
-    logo = models.ImageField(upload_to=f'media/startups/{company_name}/logo')
+    logo = models.ImageField(upload_to=f'media/startups/logos')
     team = ArrayField(models.CharField(max_length=300), blank=True)
     work_benefits = ArrayField(models.CharField(max_length=400), blank=True)
-    pitch = models.FileField(upload_to=f'media/startups/{company_name}/pitch', null=True)
+    pitch = models.FileField(upload_to=f'media/startups/pitches', null=True)
     category = ArrayField(models.CharField(max_length=200))
     business_model = models.CharField(max_length=200, choices=BUSINESS_MODEL, default='B2C')
 
@@ -29,7 +29,7 @@ class Startup(models.Model):
 
 
 class JobOpening(models.Model):
-    company = models.OneToOneField(Startup, on_delete=models.CASCADE)
+    company = models.ForeignKey(Startup, on_delete=models.CASCADE, related_name='jobs')
     job_title = models.TextField()
     description = models.TextField()
     location = models.CharField(max_length=200)
@@ -48,7 +48,13 @@ class JobOpening(models.Model):
     mode = models.CharField(max_length=200, choices=MODE, null=True)
     extra_info = ArrayField(models.TextField())
 
+    def __str__(self):
+        return self.job_title + " -" + self.company.company_name
+
 
 class StartupGallery(models.Model):
-    startup = models.ForeignKey(Startup, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=f'media/startups/{startup}/gallery')
+    startup = models.ForeignKey(Startup, on_delete=models.CASCADE, related_name='gallery')
+    image = models.ImageField(upload_to=f'media/startups/gallery')
+
+    class Meta:
+        verbose_name_plural = "Startups' Gallery"
