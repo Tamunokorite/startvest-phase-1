@@ -17,7 +17,7 @@ class Startup(models.Model):
     )
     website = models.CharField(max_length=200)
     registered = models.BooleanField()
-    logo = models.ImageField(upload_to='media/startups/logos')
+    logo = models.ImageField(upload_to=f'media/startups/{company_name}/logo')
     team = ArrayField(models.CharField(max_length=300), blank=True)
     work_benefits = ArrayField(models.CharField(max_length=400), blank=True)
     pitch = models.FileField(upload_to=f'media/startups/{company_name}/pitch', null=True)
