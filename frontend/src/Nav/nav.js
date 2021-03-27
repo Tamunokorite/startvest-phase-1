@@ -51,6 +51,7 @@ class nav extends React.Component {
                  <Nav.Item><Nav.Link active eventKey="profile" className='Navlinks' href="/profile"><PersonCircle color='#21295C' height={30} width={30}/></Nav.Link></Nav.Item>
                  </Nav>
                  
+                 
                </Navbar.Collapse>
              </Navbar>
              <div className='views'>
