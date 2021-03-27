@@ -8,13 +8,13 @@ class Investor(models.Model):
     user = models.OneToOneField(user_type, on_delete=models.CASCADE, primary_key=True)
     registered_business = models.BooleanField(default=False)
     interests = ArrayField(models.CharField(max_length=200), blank=True)
-    investments = ArrayField(ArrayField(models.FloatField()))
+    verified = models.BooleanField(default=False)
 
     def __str__(self):
         return User.get_email(self.user)
 
 
 class Investment(models.Model):
-    investor = models.OneToOneField(Investor, on_delete=models.CASCADE)
-    startup = models.OneToOneField(Startup, on_delete=models.CASCADE)
+    investor = models.ForeignKey(Investor, on_delete=models.CASCADE)
+    startup = models.ForeignKey(Startup, on_delete=models.CASCADE)
     amount = models.FloatField()
