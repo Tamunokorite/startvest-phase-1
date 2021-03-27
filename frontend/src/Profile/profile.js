@@ -53,7 +53,7 @@ class profile extends React.Component {
                <div>
                     <Container className='form '>
                          <Row className='form_box shadow-lg'>
-                              <Col className='svgIcon'><img src={ Login } height={ 400 } width={ 400 } alt="Team pic svg" /></Col>
+                              <Col className='svgIcon'><img src={ Login } className='svgIcon-image'  alt="Team pic svg" /></Col>
                               <Col className='form_items'>
                                    <h2>Login</h2>
                                    <Form >
@@ -100,7 +100,7 @@ class profile extends React.Component {
                <div>
                     <Container className='form '>
                          <Row className='form_box shadow-lg'>
-                              <Col className='svgIcon'><img src={ SignUp } height={ 400 } width={ 400 } alt="Team pic svg" /></Col>
+                              <Col className='svgIcon'><img src={ SignUp } className='svgIcon-image'  alt="Team pic svg" /></Col>
                               <Col className='form_items'>
                                    <h2>Sign Up</h2>
                                    <Form >
