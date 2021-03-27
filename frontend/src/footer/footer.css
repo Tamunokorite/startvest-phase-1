@@ -20,11 +20,13 @@
  .right{
       text-align: right;
  }
+
  .right span{ 
       margin: auto .5em !important;
  }
+
 .footer-text{
      margin: 0;
      padding: 0;
-     width: 100%;
+     width: 100vh;
 }

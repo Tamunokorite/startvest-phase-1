@@ -35,6 +35,10 @@
      background-color: var(--primary);
      border-radius: 20px ;
 }
+.svgIcon-image{
+     height: 90%;
+     width: 90%;
+}
 .form_items{
      background-color: transparent;
      font-size: medium;

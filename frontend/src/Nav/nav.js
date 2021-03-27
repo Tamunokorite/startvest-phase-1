@@ -14,6 +14,9 @@ import Investors from '../Investors/investors';
 import Profile from '../Profile/profile';
 import Jobs from '../jobs/jobs';
 
+// The logo
+import Logo from '../images/logo.png';
+
 class nav extends React.Component {
   constructor(props) {
       super(props);
@@ -33,7 +36,7 @@ class nav extends React.Component {
                <div>
                <Router>
                <Navbar className="navigation shadow-sm" collapseOnSelect expand="lg" bg="light" sticky='top' >
-               <Navbar.Brand href="/">Startvest logo</Navbar.Brand>
+               <Navbar.Brand href="/"><img src={Logo} height={30} alt='Startvest logo'/></Navbar.Brand>
                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                <Navbar.Collapse id="responsive-navbar-nav">
                  <Nav className="mr-auto">
@@ -50,6 +53,7 @@ class nav extends React.Component {
                  <Nav.Item><div className='line-break'></div></Nav.Item>
                  <Nav.Item><Nav.Link active eventKey="profile" className='Navlinks' href="/profile"><PersonCircle color='#21295C' height={30} width={30}/></Nav.Link></Nav.Item>
                  </Nav>
+
                  
                </Navbar.Collapse>
              </Navbar>
