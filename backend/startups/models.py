@@ -23,9 +23,24 @@ class Startup(models.Model):
     pitch = models.FileField(upload_to=f'media/startups/pitches', null=True)
     category = ArrayField(models.CharField(max_length=200))
     business_model = models.CharField(max_length=200, choices=BUSINESS_MODEL, default='B2C')
+    balance = models.FloatField(default=0)
 
     def __str__(self):
         return self.company_name
+
+    def deposit(self, amount):
+        try:
+            self.balance += amount
+            return True
+        except:
+            return False
+    
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+            return True
+        else:
+            return False
 
 
 class JobOpening(models.Model):

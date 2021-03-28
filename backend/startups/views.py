@@ -60,3 +60,16 @@ def update_startup_info(request, uid):
         data[SUCCESS] = UPDATE_SUCCESS
         return Response(data=data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST', ])
+def withdraw(request):
+    try:
+        startup = Startup.objects.get(pk=request.data.get('user'))
+    except Startup.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+    withdrawal = startup.withdraw(request.data.get('amount'))
+
+    if withdrawal:
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

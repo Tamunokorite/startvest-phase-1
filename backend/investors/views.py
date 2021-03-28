@@ -8,6 +8,8 @@ from django.shortcuts import get_object_or_404
 from .models import Investor, Investment
 from .serializers import InvestorSerializer
 
+from startups.models import Startup
+
 SUCCESS = 'success'
 ERROR = 'error'
 DELETE_SUCCESS = 'deleted'
@@ -67,4 +69,22 @@ def update_investor_info(request, uid):
         serializer.save()
         data[SUCCESS] = UPDATE_SUCCESS
         return Response(data=data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST', ])
+def invest(request):
+    try:
+        investor = Investor.objects.get(pk=request.data.get('investor'))
+        startup = Startup.objects.get(pk=request.data.get('startup'))
+    except Investor.DoesNotExist or Startup.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    investment = Investment(investor=investor, startup=startup)
+    serializer = InvestmentSerializer(investment, data=request.data)
+    data = {}
+    if serializer.is_valid():
+        startup.deposit(request.data.get('amount'))
+        serializer.save()
+        data[SUCCESS] = CREATE_SUCCESS
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
