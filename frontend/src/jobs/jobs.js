@@ -198,7 +198,7 @@ class jobs extends React.Component {
           <div > 
                <h1 className='investors-head'>Latest jobs at startups</h1>
                <h5>Showing {Object.keys(jobsList).length} available jobs</h5>  
-               <Container fluid>
+               <Container >
                <Row>
                {Object.values(jobsList).map((val, ind) => 
                <div key={ind} className='job-container shadow'>
