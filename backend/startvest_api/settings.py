@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
@@ -61,6 +62,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleWare',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'https://startvest-test-project.uc.r.appspot.com'
 ]
 
 ROOT_URLCONF = 'startvest_api.urls'
