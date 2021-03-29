@@ -10,8 +10,8 @@ class footer extends React.Component {
           <div className='footer'>
                <Container fluid>
                <Row className='footer-text'>
-                    <Col className='left' >Copyright &copy;  2021 Nile Google Developers Club, Abuja</Col>
-                    <Col className='right' >Contact us  <span><Twitter color='#9EB3C2' /></span>  <span>{<Github color='#9EB3C2 '/>}</span></Col>
+                    <Col  sm='auto'>Copyright &copy;  2021 Nile Google Developers Club, Abuja</Col>
+                    <Col className='right'  sm='auto'>Contact us  <span><Twitter color='#9EB3C2' /></span>  <span>{<Github color='#9EB3C2 '/>}</span></Col>
                </Row>
                </Container>
               

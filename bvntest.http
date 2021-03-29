@@ -1,0 +1,8 @@
+# POST https://vapi.verifyme.ng/v1/verifications/identities/bvn/22552177241
+# content-type: application/json
+
+# {
+#     "firstname": "Hanif",
+#     "lastname": "Adedotun"
+# }
+

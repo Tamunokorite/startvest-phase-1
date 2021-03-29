@@ -53,7 +53,7 @@ class profile extends React.Component {
                <div>
                     <Container className='form '>
                          <Row className='form_box shadow-lg'>
-                              <Col className='svgIcon'><img src={ Login } className='svgIcon-image'  alt="Team pic svg" /></Col>
+                              <Col className='svgIcon' ><img src={ Login } className='svgIcon-image' height={300} width={300} alt="Team pic svg" /></Col>
                               <Col className='form_items'>
                                    <h2>Login</h2>
                                    <Form >
@@ -100,7 +100,7 @@ class profile extends React.Component {
                <div>
                     <Container className='form '>
                          <Row className='form_box shadow-lg'>
-                              <Col className='svgIcon'><img src={ SignUp } className='svgIcon-image'  alt="Team pic svg" /></Col>
+                              <Col className='svgIcon' ><img src={ SignUp } className='svgIcon-image' height={300} width={300}  alt="Team pic svg" /></Col>
                               <Col className='form_items'>
                                    <h2>Sign Up</h2>
                                    <Form >
@@ -122,7 +122,7 @@ class profile extends React.Component {
 
                                         <Form.Row>
                                              <Form.Group as={ Col } controlId="formHorizontalPassword">
-                                                  <Form.Label  > Username</Form.Label>
+                                                  <Form.Label  > {(this.state.check1)? 'Startup name': 'Investor name'}</Form.Label>
                                                   <Form.Control name='username' onChange={ this.handleChange } value={ this.state.username } className='shadow-sm textbox' type="text" placeholder="Enter username" />
                                              </Form.Group>
                                         </Form.Row>

@@ -3,11 +3,17 @@
 /* To import the colors of the brand */
 @import "../utility/colors.css";
 
-
+.about-team-image{
+     height: 100%;
+     width: 100%;
+}
 .heading{
      font-size: xx-large;
      font-weight: bold;
      color: var(--primary)
+}
+.teambrief{
+     height: max-content;
 }
 .teamHead{
      font-weight: bold;

@@ -13,6 +13,7 @@
 .profile{
      color: var(--primary);
      text-align: center;
+     overflow: auto;
 }
 .profile-head{
      font-size: xx-large;
@@ -36,8 +37,7 @@
      border-radius: 20px ;
 }
 .svgIcon-image{
-     height: 90%;
-     width: 90%;
+    margin-top: 20%;
 }
 .form_items{
      background-color: transparent;
@@ -114,5 +114,8 @@ Form{
      .form{
           width: 90%;
      }
+     .svgIcon-image{
+          margin-top: 0;
+      }
 }
 
