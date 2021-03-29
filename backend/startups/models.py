@@ -73,3 +73,6 @@ class StartupGallery(models.Model):
 
     class Meta:
         verbose_name_plural = "Startups' Gallery"
+
+    def __str__(self):
+        return self.startup.company_name

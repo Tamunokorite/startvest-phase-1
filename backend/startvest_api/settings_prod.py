@@ -12,24 +12,21 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env()
-environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = os.environ.get('STARTVEST_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG', default=False)
+DEBUG = os.environ.get('DJANGO_DEBUG_MODE', False)
 
-ALLOWED_HOSTS = ['https://startvest-test-project.uc.r.appspot.com/', 'https://okorite-test.uc.r.appspot.com/']
+ALLOWED_HOSTS = ['https://startvest-test-project.uc.r.appspot.com/']
 
 
 # Application definition
@@ -85,7 +82,6 @@ REST_FRAMEWORK = {
 
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
     'https://startvest-test-project.uc.r.appspot.com'
 ]
 
@@ -130,11 +126,11 @@ REST_SESSION_LOGIN = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env.str('DB_NAME'),
-        'USER': env.str('DB_USER'),
-        'PASSWORD': env.str('DB_PASS'),
-        'HOST': '',
-        'PORT': env.str('DB_PORT'),
+        'NAME': os.environ['DB_NAME_DJANGO'],
+        'USER': os.environ['DB_USER_DJANGO'],
+        'PASSWORD': os.environ['DB_PASSWORD_DJANGO'],
+        'HOST': os.environ['CLOUD_SQL_INSTANCE_IP'],
+        'PORT': 5432,
     }
 }
 

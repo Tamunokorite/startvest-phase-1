@@ -35,7 +35,7 @@ class InvestorsList(generics.ListAPIView):
     serializer_class = InvestorSerializer
 
 
-class InvestorssInfo(MultipleFieldLookupMixin, generics.RetrieveAPIView):
+class InvestorsInfo(MultipleFieldLookupMixin, generics.RetrieveAPIView):
     queryset = Investor.objects.all()
     serializer_class = InvestorSerializer
     lookup_fields = ['user_id']

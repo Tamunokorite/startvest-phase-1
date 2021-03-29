@@ -9,5 +9,5 @@ urlpatterns = [
     path('<int:user_id>', views.InvestorsInfo.as_view(), name='view_investor'),
     path('<int:uid>/create', views.create_investor, name="create_investor"),
     path('<int:uid>/update', views.update_investor_info, name="update_investor"),
-    path('<int:uid>/invest', views.invest(), name="invest"),
+    path('<int:uid>/invest', views.invest, name="invest"),
 ]
