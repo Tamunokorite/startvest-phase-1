@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +28,7 @@ SECRET_KEY = env.str('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['https://startvest-test-project.uc.r.appspot.com/', 'https://okorite-test.uc.r.appspot.com/']
+ALLOWED_HOSTS = ['https://startvest-test-project.uc.r.appspot.com/', 'https://okorite-test.uc.r.appspot.com/', 'localhost']
 
 
 # Application definition
