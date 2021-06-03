@@ -221,8 +221,8 @@ class investors extends React.Component {
                               <Col className='text'>
                                    <h5 className='tagline'>We believe in your vision!</h5>
                                    <p className='homeText'>
-                                        A place where ideas meets talents and funding.
-                                        <p> Connect with top investors and achieve your dreams today!</p>
+                                        Present your ideas and
+                                        <p> connect with top investors to achieve your dreams today!</p>
                                    </p>
                                    <Fade left>
                                    <Row className='home-btns'>

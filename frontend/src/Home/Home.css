@@ -43,13 +43,15 @@
 }
 .home-btns{
      margin-top: 15%;
+     margin-left: 0;
+     
 }
 .btn-outline Button{
      background-color: transparent;
      border: 2px solid var(--primary);
      color: var(--primary);
      border-radius: 10px;
-   
+     font-weight: bolder;
 }
 
 .btn-outline Button:hover{
@@ -58,11 +60,13 @@
      border: 2px solid var(--primary);
      
 }
+
 .btn-fill Button{ 
      border-radius: 10px;
      background-color: var(--primary);
      color: white;
      border: 2px solid var(--primary);
+     font-weight: bolder;
 }
 .btn-fill Button:hover{ 
      background-color: var(--secondary);

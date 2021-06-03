@@ -9,7 +9,9 @@ class StartupForm extends React.Component {
      constructor(props) {
           super(props);
           this.state=({ 
-               name: []
+               name: [],
+               username: 'Dave Inc.',
+               email: 'dave@example.com'
           })
      }
 
@@ -26,12 +28,12 @@ render(){
                
                <Form.Group controlId="formBasicEmail">
                <Form.Label>Name of Startup</Form.Label>
-               <Form.Control className='form-input' type="text" placeholder="Enter Startup's name" />
+               <Form.Control className='form-input' type="text" placeholder="Enter Startup's name" value={ this.state.username } />
                </Form.Group>
 
                <Form.Group controlId="formBasicEmail">
                <Form.Label>Email of Startup</Form.Label>
-               <Form.Control className='form-input' type="email" placeholder="Enter Startup's email address" />
+               <Form.Control className='form-input' type="email" placeholder="Enter Startup's email address" value={this.state.email}/>
                </Form.Group>
 
                <Form.Group controlId="formBasicEmail">

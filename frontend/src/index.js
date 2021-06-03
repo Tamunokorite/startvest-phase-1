@@ -34,3 +34,7 @@ reportWebVitals();
 // git commit -m "Your message"
 // git push
 // Then merge on github.com
+
+// To run client app
+// cd frontend
+// then run: npm run client

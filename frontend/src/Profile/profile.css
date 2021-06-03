@@ -73,15 +73,15 @@ Form{
     background-color: var(--secondary);
 }
 .icons{
-     color: var(--primary);
-     height: 50%;
-     width: 50%;
-
+     color: white;
+     height: 1em;
+     width: 1em;
+     margin: auto .25em;
 }
-.icons:hover{
+/* .icons:hover{
      height: 65%;
      width: 65%;
-}
+} */
 .user_type{
      margin: 1em auto;
 }
@@ -109,7 +109,14 @@ Form{
 Form{
      color: var(--primary);
 }
-
+.google-signin{
+     height: 2em;
+     width: fit-content;
+     background-color: var(--primary);
+     border-radius: 20px ;
+     color: white;
+     padding: .25em;
+}
 @media only screen and (max-width: 600px) {
      .form{
           width: 90%;

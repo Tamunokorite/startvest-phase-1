@@ -1,7 +1,7 @@
 import React from 'react';
 import './profile.css';
 import { Container, Row, Col, Form, Spinner, Button } from 'react-bootstrap';
-import { Github, Google, Facebook } from 'react-bootstrap-icons';
+import { Google  } from 'react-bootstrap-icons';
 
 // The startup and investors form
 import StartForm from './startupForm';
@@ -18,11 +18,13 @@ class profile extends React.Component {
           this.state = ({
                user: [],
                authenticated: false,
-               registered: true,//If the user is a new user
+               registered: false,//If the user is a new user
                //User is the current signed in user profile sent from the database
 
                // Login or signup
                signup: true,
+               username: 'Tamunokorite Briggs',
+               email: 'obriggs03@gmail.com'
 
           });
      }
@@ -153,7 +155,7 @@ class profile extends React.Component {
 
                                         <Form.Group as={ Row }>
                                              <Col className='submit'>
-                                                  <Button type="submit" onClick={ () => this.setState({ authenticated: true }) }>Sign Up</Button>
+                                                  <Button type="submit" onClick={ () => {this.setState({ authenticated: true }); (this.state.check1)? this.setState({registered: false}): this.setState({registered: true})}}>Sign Up</Button>
                                              </Col>
                                         </Form.Group>
 
@@ -172,9 +174,8 @@ class profile extends React.Component {
                <div>
                     <Form.Group as={ Row } controlId="formHorizontalAltLogin">
                          <Col sm={ 4 }>{ (signup) ? 'Sign up with: ' : 'Login with: ' }</Col>
-                         <Col><Github className='icons' /></Col>
-                         <Col><Google className='icons' /></Col>
-                         <Col><Facebook className='icons' /></Col>
+                         <Col><div className='google-signin'><Google className='icons' />{ (signup) ? 'Google Signin ' : 'Google login' }</div></Col>
+
                     </Form.Group>
 
 
