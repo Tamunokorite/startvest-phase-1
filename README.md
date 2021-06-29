@@ -1,7 +1,8 @@
 # First phase of development of the Startvest project.
 
-## Frontend code and resources will be stored in the frontend directory.
+## Frontend code and resources will be stored in the frontend repository.
 The frontend app demo is available [here](https://startvest.github.io/frontend/#/)
+
 The frontend repository is seperately [available](https://github.com/Startvest/frontend)
 
 
