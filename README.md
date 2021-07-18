@@ -1,12 +1,10 @@
 # First phase of development of the Startvest project.
 
-## Frontend code and resources will be stored in the frontend directory.
-The frontend app is available on [Google Cloud](https://startvest-test-project.uc.r.appspot.com/)
+## Frontend code and resources will be stored in the frontend repository.
+The frontend app demo is available [here](https://startvest.github.io/frontend/#/)
 
-To start the front end app, select the frontend folder and type
-```
-npm run client or yarn start
-```
+The frontend repository is seperately [available](https://github.com/Startvest/frontend)
+
 
 ## Backend code and resources will be stored in the backend directory.
 To expose the backend api publicly, go into the backend folder and type the following command into the console,
