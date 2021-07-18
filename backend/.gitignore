@@ -4,7 +4,6 @@
 *.pyc
 **/__pycache__
 media
-.env
 settings_prod.py
 credentials.json
 app.yaml
